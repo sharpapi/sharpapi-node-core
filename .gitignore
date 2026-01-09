@@ -1,0 +1,11 @@
+node_modules/
+*.log
+.DS_Store
+.env
+.env.local
+coverage/
+dist/
+build/
+*.tgz
+.npm/
+.eslintcache
