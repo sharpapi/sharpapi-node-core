@@ -9,6 +9,10 @@ const { SharpApiJobTypeEnum } = require('./Enums/SharpApiJobTypeEnum');
 const { SharpApiVoiceTone } = require('./Enums/SharpApiVoiceTone');
 const { SharpApiLanguages } = require('./Enums/SharpApiLanguages');
 
+// Export Rate Limiting
+const { SlidingWindowRateLimiter } = require('./SlidingWindowRateLimiter');
+const { SharpApiError } = require('./Exceptions/SharpApiError');
+
 module.exports = {
   SharpApiCoreService,
   SharpApiJob,
@@ -17,4 +21,6 @@ module.exports = {
   SharpApiJobTypeEnum,
   SharpApiVoiceTone,
   SharpApiLanguages,
+  SlidingWindowRateLimiter,
+  SharpApiError,
 };

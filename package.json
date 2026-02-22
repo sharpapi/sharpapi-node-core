@@ -1,6 +1,6 @@
 {
   "name": "@sharpapi/sharpapi-node-core",
-  "version": "1.0.0",
+  "version": "1.3.0",
   "description": "SharpAPI.com Node.js SDK Core - Shared functionality for SharpAPI clients",
   "main": "src/index.js",
   "scripts": {
