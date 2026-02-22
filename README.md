@@ -35,7 +35,7 @@ The SharpAPI Core package provides:
 - **Rate Limiting**: Two-layer rate limiting — proactive sliding window throttling + reactive 429 retry logic
 - **Rate Limit Header Tracking**: Automatic extraction of `X-RateLimit-Limit` and `X-RateLimit-Remaining` headers
 - **Error Handling**: `SharpApiError` with HTTP status codes for timeout and rate limit errors
-- **Type Definitions**: Enums for job types, statuses, languages, and voice tones
+- **Type Definitions**: Enums for job statuses, languages, and voice tones
 - **DTO Classes**: Data Transfer Objects for API responses (`SharpApiJob`, `SharpApiSubscriptionInfo`)
 
 ---
@@ -63,7 +63,6 @@ sharpapi-node-core/
 │   │   ├── SharpApiJob.js             # Job DTO
 │   │   └── SharpApiSubscriptionInfo.js # Subscription DTO
 │   ├── Enums/
-│   │   ├── SharpApiJobTypeEnum.js     # API endpoint types
 │   │   ├── SharpApiJobStatusEnum.js   # Job statuses
 │   │   ├── SharpApiLanguages.js       # Supported languages
 │   │   └── SharpApiVoiceTone.js       # Voice tone options
@@ -160,20 +159,6 @@ try {
 ```
 
 ### Enums
-
-#### SharpApiJobTypeEnum
-
-Defines all available API endpoints:
-
-```javascript
-const { SharpApiJobTypeEnum } = require('@sharpapi/sharpapi-node-core');
-
-SharpApiJobTypeEnum.ECOMMERCE_PRODUCT_CATEGORIES  // { value, url }
-SharpApiJobTypeEnum.HR_PARSE_RESUME
-SharpApiJobTypeEnum.CONTENT_SUMMARIZE
-SharpApiJobTypeEnum.CONTENT_TRANSLATE
-// ... and more
-```
 
 #### SharpApiJobStatusEnum
 
@@ -315,7 +300,7 @@ service.setRateLimitState(state);
 Extend `SharpApiCoreService` to create custom API integrations:
 
 ```javascript
-const { SharpApiCoreService, SharpApiJobTypeEnum } = require('@sharpapi/sharpapi-node-core');
+const { SharpApiCoreService } = require('@sharpapi/sharpapi-node-core');
 
 class MyCustomService extends SharpApiCoreService {
   constructor(apiKey, apiBaseUrl = 'https://sharpapi.com/api/v1') {
@@ -324,11 +309,7 @@ class MyCustomService extends SharpApiCoreService {
 
   async analyzeContent(text) {
     const data = { content: text };
-    const response = await this.makeRequest(
-      'POST',
-      SharpApiJobTypeEnum.CONTENT_SUMMARIZE.url,
-      data
-    );
+    const response = await this.makeRequest('POST', '/content/summarize', data);
     return this.parseStatusUrl(response);
   }
 }

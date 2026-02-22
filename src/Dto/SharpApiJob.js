@@ -1,6 +1,3 @@
-const { SharpApiJobStatusEnum } = require('../Enums/SharpApiJobStatusEnum');
-const { SharpApiJobTypeEnum } = require('../Enums/SharpApiJobTypeEnum');
-
 /**
  * SharpApiJob DTO
  */
@@ -29,7 +26,7 @@ class SharpApiJob {
   }
 
   /**
-   * Returns one of the job types available in SharpApiJobTypeEnum
+   * Returns the job type string
    */
   getType() {
     return this.type;

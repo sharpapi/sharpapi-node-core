@@ -5,7 +5,6 @@ const { SharpApiSubscriptionInfo } = require('./Dto/SharpApiSubscriptionInfo');
 
 // Export Enums
 const { SharpApiJobStatusEnum } = require('./Enums/SharpApiJobStatusEnum');
-const { SharpApiJobTypeEnum } = require('./Enums/SharpApiJobTypeEnum');
 const { SharpApiVoiceTone } = require('./Enums/SharpApiVoiceTone');
 const { SharpApiLanguages } = require('./Enums/SharpApiLanguages');
 
@@ -18,7 +17,6 @@ module.exports = {
   SharpApiJob,
   SharpApiSubscriptionInfo,
   SharpApiJobStatusEnum,
-  SharpApiJobTypeEnum,
   SharpApiVoiceTone,
   SharpApiLanguages,
   SlidingWindowRateLimiter,
