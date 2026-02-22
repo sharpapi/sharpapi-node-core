@@ -172,7 +172,6 @@ SharpApiJobTypeEnum.ECOMMERCE_PRODUCT_CATEGORIES  // { value, url }
 SharpApiJobTypeEnum.HR_PARSE_RESUME
 SharpApiJobTypeEnum.CONTENT_SUMMARIZE
 SharpApiJobTypeEnum.CONTENT_TRANSLATE
-SharpApiJobTypeEnum.CONTENT_DETECT_AI
 // ... and more
 ```
 

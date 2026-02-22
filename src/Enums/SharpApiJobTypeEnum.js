@@ -84,11 +84,6 @@ class SharpApiJobTypeEnum {
     url: '/content/detect_profanities',
   };
 
-  static CONTENT_DETECT_AI = {
-    value: 'content_detect_ai',
-    url: '/content/detect_ai',
-  };
-
   static CONTENT_SUMMARIZE = {
     value: 'content_summarize',
     url: '/content/summarize',
